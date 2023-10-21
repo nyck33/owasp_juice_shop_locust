@@ -1,0 +1,14 @@
+Count,Message,Traceback,Nodes
+7582,name 'string' is not defined,"  File ""/home/nyck33/miniconda3/envs/cybsec/lib/python3.10/site-packages/locust/user/task.py"", line 347, in run
+    self.execute_next_task()
+  File ""/home/nyck33/miniconda3/envs/cybsec/lib/python3.10/site-packages/locust/user/task.py"", line 378, in execute_next_task
+    self.execute_task(self._task_queue.pop(0))
+  File ""/home/nyck33/miniconda3/envs/cybsec/lib/python3.10/site-packages/locust/user/task.py"", line 496, in execute_task
+    task(self.user).run()
+  File ""/home/nyck33/miniconda3/envs/cybsec/lib/python3.10/site-packages/locust/user/task.py"", line 332, in run
+    self.on_start()
+  File ""/home/nyck33/Documents/cybersec/owaspZap/juice-shop/locust/juice_test6.py"", line 8, in on_start
+    email = self.random_email()
+  File ""/home/nyck33/Documents/cybersec/owaspZap/juice-shop/locust/juice_test6.py"", line 13, in random_email
+    return ''.join(random.choices(string.ascii_lowercase, k=10)) + '@example.com'
+",local

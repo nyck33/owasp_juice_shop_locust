@@ -1,0 +1,12 @@
+Count,Message,Traceback,Nodes
+8,string indices must be integers,"  File ""/home/nyck33/miniconda3/envs/cybsec/lib/python3.10/site-packages/locust/user/task.py"", line 347, in run
+    self.execute_next_task()
+  File ""/home/nyck33/miniconda3/envs/cybsec/lib/python3.10/site-packages/locust/user/task.py"", line 378, in execute_next_task
+    self.execute_task(self._task_queue.pop(0))
+  File ""/home/nyck33/miniconda3/envs/cybsec/lib/python3.10/site-packages/locust/user/task.py"", line 390, in execute_task
+    task(self)
+  File ""/home/nyck33/Documents/cybersec/owaspZap/juice-shop/locust/juice_test6.py"", line 85, in complete_user_journey
+    available_products = [p for p in products if p['quantity'] >= 1]
+  File ""/home/nyck33/Documents/cybersec/owaspZap/juice-shop/locust/juice_test6.py"", line 85, in <listcomp>
+    available_products = [p for p in products if p['quantity'] >= 1]
+",local

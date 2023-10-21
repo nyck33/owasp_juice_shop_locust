@@ -53,26 +53,30 @@ class ShopperUser(HttpUser):
             headers={"Authorization": f"Bearer {token}"}
         )
         assert browse_response.status_code == 200, f"Unexpected error {browse_response.status_code}: {browse_response.text}"
-        #print(f'Products: {json.dumps(browse_response.json(), indent=4)}')
-
         products = browse_response.json()
-        # Extract the list of products from the dictionary
-        products_list = products['data']
 
-        # Now choose a random product from the list
-        random_product = random.choice(products_list)
+        # Validate that 'data' key exists in products and is not empty
+        if 'data' in products and products['data']:
+            products_dict = {prod['id']: prod['quantity'] for prod in products['data']}
+        else:
+            assert False, "No products found in the response"
 
-        # Extract the product ID
-        product_id = random_product['id']
-        #print(f"Product ID: {product_id}")
-
+        # Choose a random product ID between the known range
+        for _ in range(5):  # Retry up to 5 times
+            random_product_id = random.randint(1, 43)
+            
+            # Check if the product has more than 1 stock
+            if products_dict.get(random_product_id, 0) > 1:
+                break
+        else:
+            assert False, "Could not find a product with sufficient stock after 5 tries"
 
         # Step 4: Add product to cart
         cart_response = self.client.post(
             "/api/BasketItems/",
             headers={"Authorization": f"Bearer {token}"},
             json={
-                "productId": product_id,
+                "productId": random_product_id,
                 "quantity": 1
             }
         )

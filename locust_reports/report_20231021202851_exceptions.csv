@@ -1,0 +1,12 @@
+Count,Message,Traceback,Nodes
+29,'quantity',"  File ""/home/nyck33/miniconda3/envs/cybsec/lib/python3.10/site-packages/locust/user/task.py"", line 347, in run
+    self.execute_next_task()
+  File ""/home/nyck33/miniconda3/envs/cybsec/lib/python3.10/site-packages/locust/user/task.py"", line 378, in execute_next_task
+    self.execute_task(self._task_queue.pop(0))
+  File ""/home/nyck33/miniconda3/envs/cybsec/lib/python3.10/site-packages/locust/user/task.py"", line 499, in execute_task
+    task(self.user)
+  File ""/home/nyck33/Documents/cybersec/owaspZap/juice-shop/locust/juice_shop_test3.py"", line 60, in register_browse_and_checkout
+    products_dict = {prod['id']: prod['quantity'] for prod in products['data']}
+  File ""/home/nyck33/Documents/cybersec/owaspZap/juice-shop/locust/juice_shop_test3.py"", line 60, in <dictcomp>
+    products_dict = {prod['id']: prod['quantity'] for prod in products['data']}
+",local
