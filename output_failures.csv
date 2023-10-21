@@ -1,0 +1,6 @@
+Method,Name,Error,Occurrences
+GET,/,RemoteDisconnected('Remote end closed connection without response'),5
+POST,/api/BasketItems/,HTTPError('401 Client Error: Unauthorized for url: /api/BasketItems/'),20067
+GET,/,"ConnectionResetError(104, 'Connection reset by peer')",7
+POST,/api/BasketItems/,"ConnectionResetError(104, 'Connection reset by peer')",3
+POST,/api/BasketItems/,RemoteDisconnected('Remote end closed connection without response'),2
