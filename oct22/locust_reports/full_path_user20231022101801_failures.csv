@@ -1,0 +1,5 @@
+Method,Name,Error,Occurrences
+POST,/api/Users/,"ConnectionRefusedError(111, 'Connection refused')",1
+POST,/api/BasketItems/,HTTPError('400 Client Error: Bad Request for url: /api/BasketItems/'),5
+POST,/rest/user/login,HTTPError('401 Client Error: Unauthorized for url: /rest/user/login'),1
+POST,/api/BasketItems/,HTTPError('500 Server Error: Internal Server Error for url: /api/BasketItems/'),3

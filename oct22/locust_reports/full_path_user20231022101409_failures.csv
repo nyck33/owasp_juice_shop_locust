@@ -1,0 +1,4 @@
+Method,Name,Error,Occurrences
+POST,/api/Users/,"ConnectionRefusedError(111, 'Connection refused')",3
+POST,/rest/user/login,"ConnectionRefusedError(111, 'Connection refused')",3
+GET,/rest/products/search?q=,"ConnectionRefusedError(111, 'Connection refused')",30

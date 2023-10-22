@@ -60,9 +60,9 @@ class UserBehavior(TaskSet):
         products_data = self.api_request('GET', "/rest/products/search?q=")
         if not products_data:
             return
-
+        print(f'type: {type(products_data)}\nproducts_data: {products_data}')
         # Filter products that are available for purchase
-        available_products = [p for p in products_data.get('data', []) if p['quantity'] >= 1]
+        available_products = products_data.get('data', [])
         
         if not available_products:
             logging.info("No available products. Performing non-buying behaviors.")

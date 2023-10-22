@@ -1,0 +1,31 @@
+Count,Message,Traceback,Nodes
+20,'UserBehavior' object has no attribute 'token',"  File ""/home/nyck33/miniconda3/envs/cybsec/lib/python3.10/site-packages/locust/user/task.py"", line 347, in run
+    self.execute_next_task()
+  File ""/home/nyck33/miniconda3/envs/cybsec/lib/python3.10/site-packages/locust/user/task.py"", line 378, in execute_next_task
+    self.execute_task(self._task_queue.pop(0))
+  File ""/home/nyck33/miniconda3/envs/cybsec/lib/python3.10/site-packages/locust/user/task.py"", line 496, in execute_task
+    task(self.user).run()
+  File ""/home/nyck33/miniconda3/envs/cybsec/lib/python3.10/site-packages/locust/user/task.py"", line 332, in run
+    self.on_start()
+  File ""/home/nyck33/Documents/cybersec/owaspZap/juice-shop/locust/oct22/user_story_test.py"", line 10, in on_start
+    self.register_and_login()
+  File ""/home/nyck33/Documents/cybersec/owaspZap/juice-shop/locust/oct22/user_story_test.py"", line 42, in register_and_login
+    self.api_request('POST', ""/api/Users/"", json=reg_data)
+  File ""/home/nyck33/Documents/cybersec/owaspZap/juice-shop/locust/oct22/user_story_test.py"", line 15, in api_request
+    if self.token:
+",local
+3,'UserBehavior' object has no attribute 'token',"  File ""/home/nyck33/miniconda3/envs/cybsec/lib/python3.10/site-packages/locust/user/task.py"", line 347, in run
+    self.execute_next_task()
+  File ""/home/nyck33/miniconda3/envs/cybsec/lib/python3.10/site-packages/locust/user/task.py"", line 378, in execute_next_task
+    self.execute_task(self._task_queue.pop(0))
+  File ""/home/nyck33/miniconda3/envs/cybsec/lib/python3.10/site-packages/locust/user/task.py"", line 496, in execute_task
+    task(self.user).run()
+  File ""/home/nyck33/miniconda3/envs/cybsec/lib/python3.10/site-packages/locust/user/task.py"", line 332, in run
+    self.on_start()
+  File ""/home/nyck33/Documents/cybersec/owaspZap/juice-shop/locust/oct22/user_story_test.py"", line 10, in on_start
+    token = None
+  File ""/home/nyck33/Documents/cybersec/owaspZap/juice-shop/locust/oct22/user_story_test.py"", line 42, in register_and_login
+    ""password"": password,
+  File ""/home/nyck33/Documents/cybersec/owaspZap/juice-shop/locust/oct22/user_story_test.py"", line 15, in api_request
+    def api_request(self, method, endpoint, headers=None, **kwargs):
+",local

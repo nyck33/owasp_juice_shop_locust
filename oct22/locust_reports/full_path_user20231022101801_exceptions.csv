@@ -1,0 +1,10 @@
+Count,Message,Traceback,Nodes
+14,'UserBehavior' object has no attribute 'basket_id',"  File ""/home/nyck33/miniconda3/envs/cybsec/lib/python3.10/site-packages/locust/user/task.py"", line 347, in run
+    self.execute_next_task()
+  File ""/home/nyck33/miniconda3/envs/cybsec/lib/python3.10/site-packages/locust/user/task.py"", line 378, in execute_next_task
+    self.execute_task(self._task_queue.pop(0))
+  File ""/home/nyck33/miniconda3/envs/cybsec/lib/python3.10/site-packages/locust/user/task.py"", line 390, in execute_task
+    task(self)
+  File ""/home/nyck33/Documents/cybersec/owaspZap/juice-shop/locust/oct22/user_story_test.py"", line 101, in complete_user_journey
+    if not self.basket_id:
+",local
