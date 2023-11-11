@@ -1,17 +1,13 @@
 '''
-locust -f user_story_test.py --headless -u 100 -r 10 --host http://localhost:3000 --csv="locust_reports/full_path_user$(date +\%Y\%m\%d\%H\%M\%S)"
-#web gui
-locust -f user_story_test.py -u 100 -r 10 --host http://localhost:3000
+locust -f user_story_test.py --users 100 --spawn-rate 10 --headless
 
 '''
-
 from locust import HttpUser, TaskSet, task, between
 import json
 import random
 import string
 import logging
 import time
-from datetime import datetime
 
 # Create a logging handler that flushes after each write
 class FlushingHandler(logging.FileHandler):
@@ -41,27 +37,17 @@ class UserBehavior(TaskSet):
         self.register_and_login()
 
     def api_request(self, method, endpoint, headers=None, **kwargs):
-
-        timestamp = datetime.now().isoformat()
-        logger.info(f"{timestamp} - Sending{method.upper()} request to {endpoint})")
-
-        
         if headers is None:
             headers = {}
         if self.token:
             headers["Authorization"] = f"Bearer {self.token}"
 
         response = getattr(self.client, method.lower())(endpoint, headers=headers, **kwargs)
-        
-        # Log the response details using the response_time attribute
         if response.status_code not in [200, 201]:
-            logger.error(f"Response took {response.elapsed.total_seconds()}s - {method.upper()} {endpoint} failed with error {response.status_code}: {response.text}")
+            logger.error(f"{method.upper()} {endpoint} failed with error {response.status_code}: {response.text}")
             return None
-        else:
-            logger.info(f"Response took {response.elapsed.total_seconds()}s - Received {response.status_code} response from {endpoint}")
 
         return json.loads(response.text)
-
 
     def random_email(self):
         return ''.join(random.choices(string.ascii_lowercase, k=10)) + '@example.com'

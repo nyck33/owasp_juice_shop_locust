@@ -1,7 +1,3 @@
-'''
-locust -f locust_attack.py --host=http://localhost:3000
-'''
-
 from locust import HttpUser, TaskSet, task, between
 import json
 import random

@@ -1,0 +1,3 @@
+[submodule "Saleor/locsut-graphql-client"]
+	path = Saleor/locsut-graphql-client
+	url = git@github.com:rohitghatol/locust-graphql-client.git
